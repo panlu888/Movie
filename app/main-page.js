@@ -1,12 +1,10 @@
-var createViewModel = require("./main-view-model").createViewModel;
 var color = require("./Utils/tn-common-util.js"),
-    apiCall = require('./Utils/tn-api-call.js').apiCall,
-    _ = require('lodash');
+  apiCall = require('./Utils/tn-api-call.js').apiCall,
+  observable = require("data/observable"),
+  _ = require('lodash');
 
-function onNavigatingTo(args) {
-  var page = args.object;
-  page.bindingContext = createViewModel();
-}
+// Create view model to expose data to view
+var viewModel = new observable.Observable();
 
 function setTabViewColor(tabView) {
   tabView.selectedColor = color.yellowColor;
@@ -17,15 +15,14 @@ function setTabViewColor(tabView) {
   tabView.selectedColor = color.yellowColor;
 }
 
+
+
 exports.pageLoaded = function (args) {
   page = args.object;
-  var tabView = page.getViewById("tabView");
-  setTabViewColor(tabView);
+  setTabViewColor(page.getViewById("tabView"));
   apiCall.getData('movies').then(function (response) {
-    // here is the response from movies api
-  }, function (error) {
-    
+    viewModel.set("myItems", response.results);
+    //bind viewModel to page binding context
+    page.bindingContext = viewModel;
   });
 };
-
-exports.onNavigatingTo = onNavigatingTo;
