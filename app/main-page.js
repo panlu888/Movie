@@ -15,8 +15,6 @@ function setTabViewColor(tabView) {
   tabView.selectedColor = color.yellowColor;
 }
 
-
-
 exports.pageLoaded = function (args) {
   page = args.object;
   setTabViewColor(page.getViewById("tabView"));
