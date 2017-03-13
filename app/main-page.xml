@@ -28,7 +28,7 @@
         <TabViewItem.view>
         <GridLayout cssClass="back-color">
             <gv:GridView items="{{ movies }}" id="movies" verticalSpacing="5" horizontalSpacing="5" colWidth="{{ screenWidth*0.5-10 }}" rowHeight="300" padding="5"
-                 itemTap="gridViewItemTap" cscssClass="list-mark">
+                 itemTap="gridViewItemTap" cssClass="list-item">
               <gv:GridView.itemTemplate>
                 <GridLayout stretchLastChild="true" columns="*" rows="*,auto,auto" style.verticalAlignment="top" cssClass="list-item">
                   <!--<Image src="{{ poster_240x342 }}" row="0" stretch="aspectFill" height="{{ (screenWidth*0.5-10)*2.4 }}" width="{{ screenWidth*0.5-10 }}" loadMode="async" style.verticalAlignment="top" /> -->
@@ -43,9 +43,9 @@
       </TabViewItem>
       <TabViewItem title="Theatres" iconSource="~/UI/tab/Dep-S">
         <TabViewItem.view >
-          <ListView items="{{ theatres }}" id = "theatres" cssClass="back-color">
+          <ListView items="{{ theatres }}" id = "theatres" cssClass="back-color" cssClass="list-mark">
             <ListView.itemTemplate>
-            <StackLayout horizontal-aligment="stretch" rowHeight="60" cssClass="list-item">
+            <StackLayout horizontal-aligment="stretch" rowHeight="60" >
               <Label text="{{ title }}" height="40" textWrap="true" class="title" cssClass="main-text"/>
               <Label text="{{ first_aired }}" height="20" textWrap="true" class="title" cssClass="detail-text"/>
             </StackLayout>
