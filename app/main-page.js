@@ -12,8 +12,6 @@ function setTabView(tabView) {
   tabView.tabsBackgroundColor = color.color_dark4;
   tabView.tabTextColor = color.whiteColor;
   tabView.tabBackgroundColor = color.color_tabground;
-  tabView.selectedColor = color.yellowColor;
-  tabView.selectedColor = color.yellowColor;
 }
 exports.selectedIndexChanged = function (args){
   page = args.object;

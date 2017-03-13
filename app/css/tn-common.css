@@ -1,3 +1,13 @@
 .list-mark{
     margin: 0,0,44,0;
+    color: #212121;
+    background-color: #F5F5F5;
+}
+.list-item{
+    color: #212121;
+    background-color: #F5F5F5;
+}
+.navi-color{
+    color: #ffffff;
+    background-color: #F4B400
 }
