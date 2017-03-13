@@ -4,13 +4,12 @@ var apiUrl = 'https://api-public.guidebox.com/v2/{apiName}?api_key=f2c1978f68586
 // Api object
 var apiCall = {
     getData: function (apiName) {
-        apiUrl = apiUrl.replace('{apiName}', apiName);
-        return http.getJSON(apiUrl).then(function (response) {
+        let tmpapiUrl = apiUrl.replace('{apiName}', apiName);
+        return http.getJSON(tmpapiUrl).then(function (response) {
             return response;
         }, function (error) {
             return error;
         });
     }
 };
-
 exports.apiCall = apiCall;

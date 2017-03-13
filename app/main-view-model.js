@@ -17,7 +17,6 @@ function createViewModel() {
         this.counter--;
         this.set("message", getMessage(this.counter));
     }
-
     return viewModel;
 }
 

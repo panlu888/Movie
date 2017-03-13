@@ -1,18 +1,56 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" navigatingTo="onNavigatingTo" class="page">
-  <TabView id="tabView">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:gv="nativescript-grid-view"
+       loaded="pageLoaded" navigatingTo="onNavigatingTo" class="page">
+  <!--
+    The ActionBar is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
+    http://docs.nativescript.org/ui/action-bar
+    -->
+  <!--<Page.actionBar>
+        <ActionBar title="My App" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>-->
+  <!--
+    The StackLayout stacks UI components on the screen—either vertically or horizontally.
+    In this case, the StackLayout does vertical stacking; you can change the stacking to
+    horizontal by applying a orientation="horizontal" attribute to the <StackLayout> element.
+    You can learn more about NativeScript layouts at
+    https://docs.nativescript.org/ui/layout-containers.
+
+    These components make use of several CSS class names that are part of the NativeScript
+    core theme, such as p-20, btn, h2, and text-center. You can view a full list of the
+    class names available for styling your app at https://docs.nativescript.org/ui/theme.
+    -->
+    <ActionBar id="actionbar" title="{{ naviTitle }}" icon="" class="action-bar">
+    </ActionBar>
+  <TabView id="tabView" selectedIndexChanged = "selectedIndexChanged" >
     <TabView.items>
       <TabViewItem title="Movies" iconSource="~/UI/tab/Dep-A">
         <TabViewItem.view>
-          <ListView items="{{ myItems }}">
-            <ListView.itemTemplate>
-              <Label text="{{ title }}" textWrap="true" class="title" />
-            </ListView.itemTemplate>
-          </ListView>
+        <GridLayout>
+            <gv:GridView items="{{ movies }}" id="movies" verticalSpacing="5" horizontalSpacing="5" colWidth="{{ screenWidth*0.5-10 }}" rowHeight="300" padding="5"
+                 itemTap="gridViewItemTap">
+              <gv:GridView.itemTemplate>
+                <GridLayout stretchLastChild="true" columns="*" rows="*,auto,auto" style.verticalAlignment="top" >
+                  <!--<Image src="{{ poster_240x342 }}" row="0" stretch="aspectFill" height="{{ (screenWidth*0.5-10)*2.4 }}" width="{{ screenWidth*0.5-10 }}" loadMode="async" style.verticalAlignment="top" /> -->
+                  <Image src="~/UI/tmp/demo1" row="0" stretch="aspectFit" height="{{ (screenWidth-10)*0.5*2.4 }}" width="{{ (screenWidth-10)*0.5 }}" loadMode="async" style.verticalAlignment="top" />
+                   <Label text="{{ title }}" row="1" verticalAlignment="left" textWrap="false" cssClass="main-text"/>
+                  <Label text="{{ release_date }}" row="2"  verticalAlignment="center" cssClass="detail-text"/>
+                </GridLayout>
+              </gv:GridView.itemTemplate>
+            </gv:GridView>
+        </GridLayout>
         </TabViewItem.view>
       </TabViewItem>
       <TabViewItem title="Theatres" iconSource="~/UI/tab/Dep-S">
-        <TabViewItem.view>
-          <Label text="Theatres" />
+        <TabViewItem.view >
+          <ListView items="{{ theatres }}" id = "theatres" cssClass="list-mark">
+            <ListView.itemTemplate>
+            <StackLayout horizontal-aligment="stretch" rowHeight="60">
+              <Label text="{{ title }}" height="40" textWrap="true" class="title" cssClass="main-text"/>
+              <Label text="{{ first_aired }}" height="20" textWrap="true" class="title" cssClass="detail-text"/>
+            </StackLayout>
+            </ListView.itemTemplate>
+          </ListView>
         </TabViewItem.view>
       </TabViewItem>
       <TabViewItem title="Profile" iconSource="~/UI/tab/Dep-U">
