@@ -31,8 +31,7 @@
                  itemTap="gridViewItemTap" cssClass="list-item">
               <gv:GridView.itemTemplate>
                 <GridLayout stretchLastChild="true" columns="*" rows="*,auto,auto" style.verticalAlignment="top" cssClass="list-item">
-                  <!--<Image src="{{ poster_240x342 }}" row="0" stretch="aspectFill" height="{{ (screenWidth*0.5-10)*2.4 }}" width="{{ screenWidth*0.5-10 }}" loadMode="async" style.verticalAlignment="top" /> -->
-                  <Image src="~/UI/tmp/demo1" row="0" stretch="aspectFit" height="{{ (screenWidth-10)*0.5*2.4 }}" width="{{ (screenWidth-10)*0.5 }}" loadMode="async" style.verticalAlignment="top" />
+                  <Image src="{{ poster_240x342 }}" row="0" stretch="aspectFit" height="{{ (screenWidth-10)*0.5*2.4 }}" width="{{ (screenWidth-10)*0.5 }}" loadMode="async" />
                    <Label text="{{ title }}" row="1" verticalAlignment="left" textWrap="false" cssClass="main-text"/>
                   <Label text="{{ release_date }}" row="2"  verticalAlignment="center" cssClass="detail-text"/>
                 </GridLayout>

@@ -26,7 +26,7 @@ exports.selectedIndexChanged = function (args){
   });
     }
   }
-}
+};
 
 exports.pageLoaded = function (args) {
   page = args.object;
