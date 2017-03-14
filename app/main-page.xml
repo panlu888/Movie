@@ -30,10 +30,10 @@
             <gv:GridView items="{{ movies }}" id="movies" verticalSpacing="5" horizontalSpacing="5" colWidth="{{ screenWidth*0.5-10 }}" rowHeight="300" padding="5"
                  itemTap="gridViewItemTap" cssClass="list-item">
               <gv:GridView.itemTemplate>
-                <GridLayout stretchLastChild="true" columns="*" rows="*,auto,auto" style.verticalAlignment="top" cssClass="list-item">
+                <GridLayout stretchLastChild="true" columns="*" rows="*,auto,auto" style.verticalAlignment="top" cssClass="list-item"  tap="onTap">
                   <Image src="{{ poster_240x342 }}" row="0" stretch="aspectFit" height="{{ (screenWidth-10)*0.5*2.4 }}" width="{{ (screenWidth-10)*0.5 }}" loadMode="async" />
-                   <Label text="{{ title }}" row="1" verticalAlignment="left" textWrap="false" cssClass="main-text"/>
-                  <Label text="{{ release_date }}" row="2"  verticalAlignment="center" cssClass="detail-text"/>
+                  <Label text="{{ title }}" row="1" textWrap="false" cssClass="main-text"/>
+                  <Label text="{{ release_date }}" row="2" cssClass="detail-text"/>
                 </GridLayout>
               </gv:GridView.itemTemplate>
             </gv:GridView>
