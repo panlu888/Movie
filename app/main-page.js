@@ -2,6 +2,7 @@ var color = require("./Utils/tn-common-util.js"),
   apiCall = require('./Utils/tn-api-call.js').apiCall,
   observable = require("data/observable"),
   utilityModule = require("utils/utils"),
+  frameModule = require("ui/frame"),
   _ = require('lodash');
 
 var screen_width_inDP = require("platform").screen.mainScreen.widthPixels / require("platform").screen.mainScreen.scale;
@@ -32,9 +33,22 @@ exports.selectedIndexChanged = function (args) {
 };
 
 exports.gridViewItemTap = function (args) {
-  console.log('hello world');
+  var selectedItem = _.get(viewModel.get('movies'), args.index);
+  var topmost = frameModule.topmost();
+  var navigationEntry = {
+    moduleName: 'Views/movie-detail/movie-detail',
+    context: {
+      trailUrl: _.get(selectedItem, 'metacritic')
+    },
+    animated: true,
+    transition: {
+      name: 'slide',
+      duration: 380,
+      curve: 'easeOut'
+    }
+  };
+  topmost.navigate(navigationEntry);
 };
-
 
 exports.pageLoaded = function (args) {
   page = args.object;
