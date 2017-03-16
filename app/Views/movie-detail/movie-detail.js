@@ -4,7 +4,8 @@ var page, oWebViewInterface;
 
 exports.pageLoaded = function (args) {
     page = args.object;
-    setupWebViewInterface(page);
+    var url = page.navigationContext.trailUrl;
+    setupWebViewInterface(page, url);
 };
 
 function setupWebViewInterface(page, url) {
