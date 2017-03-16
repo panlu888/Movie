@@ -33,8 +33,8 @@ exports.selectedIndexChanged = function (args) {
 };
 
 exports.gridViewItemTap = function (args) {
-  var selectedItem = _.get(viewModel.get('movies'), args.index);
-  var topmost = frameModule.topmost();
+  var selectedItem = _.get(viewModel.get('movies'), args.index),
+    topmost = frameModule.topmost();
   var navigationEntry = {
     moduleName: 'Views/movie-detail/movie-detail',
     context: {

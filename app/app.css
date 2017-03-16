@@ -20,3 +20,5 @@ refer to http://docs.nativescript.org/ui/theme.
 @import 'nativescript-theme-core/css/core.light.css';
 @import url('/css/tn-text.css');
 @import url('/css/tn-common.css');
+@import url('/Views/movie-detail/movie-detail.css');
+
