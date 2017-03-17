@@ -50,14 +50,29 @@ exports.gridViewItemTap = function (args) {
   topmost.navigate(navigationEntry);
 };
 
+exports.theatresItemTap = function (args) {
+  var selectedItem = _.get(viewModel.get('theatres'), args.index),
+    topmost = frameModule.topmost();
+  var navigationEntry = {
+    moduleName: 'Views/movie-detail/movie-detail',
+    context: {
+      trailUrl: _.get(selectedItem, 'metacritic')
+    },
+    animated: true,
+    transition: {
+      name: 'slide',
+      duration: 380,
+      curve: 'easeOut'
+    }
+  };
+  topmost.navigate(navigationEntry);
+};
 exports.pageLoaded = function (args) {
   page = args.object;
   var tabView = page.getViewById("tabView");
   setTabView(tabView);
   viewModel.set("naviTitle", "Movies");
   viewModel.set("screenWidth", screen_width_inDP);
-  viewModel.set("movies", []);
-  viewModel.set("theatres", []);
   page.bindingContext = viewModel;
   apiCall.getData('movies').then(function (response) {
     viewModel.set("movies", response.results);

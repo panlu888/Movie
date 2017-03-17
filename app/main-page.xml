@@ -42,7 +42,7 @@
       </TabViewItem>
       <TabViewItem title="Theatres" iconSource="~/UI/tab/Dep-S">
         <TabViewItem.view >
-          <ListView items="{{ theatres }}" id = "theatres" cssClass="back-color" cssClass="list-mark">
+          <ListView items="{{ theatres }}" id = "theatres" cssClass="back-color" itemTap="theatresItemTap" cssClass="list-mark">
             <ListView.itemTemplate>
             <StackLayout horizontal-aligment="stretch" rowHeight="60" >
               <Label text="{{ title }}" height="40" textWrap="true" class="title" cssClass="main-text"/>
