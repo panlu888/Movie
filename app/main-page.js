@@ -24,9 +24,9 @@ exports.selectedIndexChanged = function (args) {
     var index = tabView.selectedIndex;
     var item = tabView.items[index];
     viewModel.set("naviTitle", item.title);
-    if (index == 1 && (viewModel.theatres == undefined || viewModel.theatres.length <= 0)) {
+    if (index == 1 && (viewModel.shows == undefined || viewModel.shows.length <= 0)) {
       apiCall.getData('shows').then(function (response) {
-        viewModel.set("theatres", response.results);
+        viewModel.set("shows", response.results);
       });
     }
   }
@@ -50,13 +50,14 @@ exports.gridViewItemTap = function (args) {
   topmost.navigate(navigationEntry);
 };
 
-exports.theatresItemTap = function (args) {
-  var selectedItem = _.get(viewModel.get('theatres'), args.index),
-    topmost = frameModule.topmost();
+exports.showsItemTap = function (args) {
+  var selectedItem = _.get(viewModel.get('shows'), args.index),
+  topmost = frameModule.topmost();
+
   var navigationEntry = {
-    moduleName: 'Views/movie-detail/movie-detail',
+    moduleName: 'Views/show-detail/show-detail',
     context: {
-      trailUrl: _.get(selectedItem, 'metacritic')
+      item: selectedItem
     },
     animated: true,
     transition: {
@@ -67,6 +68,7 @@ exports.theatresItemTap = function (args) {
   };
   topmost.navigate(navigationEntry);
 };
+
 exports.pageLoaded = function (args) {
   page = args.object;
   var tabView = page.getViewById("tabView");

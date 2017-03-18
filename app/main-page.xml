@@ -40,9 +40,9 @@
         </GridLayout>
         </TabViewItem.view>
       </TabViewItem>
-      <TabViewItem title="Theatres" iconSource="~/UI/tab/Dep-S">
+      <TabViewItem title="Shows" iconSource="~/UI/tab/Dep-S">
         <TabViewItem.view >
-          <ListView items="{{ theatres }}" id = "theatres" cssClass="back-color" itemTap="theatresItemTap" cssClass="list-mark">
+          <ListView items="{{ shows }}" id = "shows" cssClass="back-color" itemTap="showsItemTap" cssClass="list-mark">
             <ListView.itemTemplate>
             <StackLayout horizontal-aligment="stretch" rowHeight="60" >
               <Label text="{{ title }}" height="40" textWrap="true" class="title" cssClass="main-text"/>

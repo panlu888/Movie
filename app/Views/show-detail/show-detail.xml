@@ -1,0 +1,5 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onPageLoaded" navigatingTo="onNavigatingTo" class="page">
+<ActionBar id="actionbar" title="{{ naviTitle }}" icon="" class="action-bar" cssClass="navi-color">
+    </ActionBar>
+    <Label height="200" width="200" text="{{ jsonstring }}" />
+</Page>
