@@ -52,7 +52,7 @@ exports.gridViewItemTap = function (args) {
 
 exports.showsItemTap = function (args) {
   var selectedItem = _.get(viewModel.get('shows'), args.index),
-  topmost = frameModule.topmost();
+    topmost = frameModule.topmost();
 
   var navigationEntry = {
     moduleName: 'Views/show-detail/show-detail',

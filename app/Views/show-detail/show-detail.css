@@ -1,0 +1,14 @@
+.desc-label {
+    text-align: center;
+    margin-top: 7;
+    background-color: green;
+    color: pink;
+}
+
+.detail-img {
+    margin-top: -20;
+}
+
+.desc-text {
+    font-size: 12;
+}
