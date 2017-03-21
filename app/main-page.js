@@ -68,24 +68,13 @@ exports.showsItemTap = function (args) {
   };
   topmost.navigate(navigationEntry);
 };
-function refreshProfile(){
-  var infos = [
-    {"icon":"icon1","title":"User Login","sorrow":"so"},
-    {"icon":"icon1","title":"Settings","sorrow":"so"},
-    {"icon":"icon1","title":"Clear Cache Data","sorrow":"so"},
-    {"icon":"icon1","title":"About Us","sorrow":"so"},
-    ];
-    viewModel.set("infos",infos);
-}
+
 exports.pageLoaded = function (args) {
   page = args.object;
   var tabView = page.getViewById("tabView");
   setTabView(tabView);
   viewModel.set("naviTitle", "Movies");
   viewModel.set("screenWidth", screen_width_inDP);
-
-  refreshProfile();
-
   page.bindingContext = viewModel;
   apiCall.getData('movies').then(function (response) {
     viewModel.set("movies", response.results);

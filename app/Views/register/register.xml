@@ -1,4 +1,0 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-<ActionBar id="actionbar" title="TN" icon="" class="action-bar" cssClass="white_color">
-</ActionBar>
-</Page>
