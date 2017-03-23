@@ -14,7 +14,6 @@ var user = new Observable({
 exports.loaded = function(args) {
     page = args.object;
     page.bindingContext = user;
-    console.log("hello");
 };
 
 exports.signIn = function() {
@@ -34,7 +33,18 @@ exports.signIn = function() {
 };
 
 exports.register = function() {
-    var topmost = frameModule.topmost();
-    topmost.navigate("views/register/register");
-    alert("Registering");
+    topmost = frameModule.topmost();
+    var navigationEntry = {
+    moduleName: 'views/register/register',
+    context: {
+      
+    },
+    animated: true,
+    transition: {
+      name: 'slide',
+      duration: 300,
+      curve: 'easeOut'
+    }
+  };
+  topmost.navigate(navigationEntry);
 };

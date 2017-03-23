@@ -1,8 +1,8 @@
 <Page loaded="loaded">
-<ActionBar id="actionbar" title="TN" icon="" class="action-bar" cssClass="white_color">
+<ActionBar id="actionbar" title="TN" icon="" class="action-bar" cssClass="navi-white_color">
 </ActionBar>
 <StackLayout orientation="vertical">
-    <Image src="res:~/UI/tmp/login-header" stretch="none" horizontalAlignment="center" />
+    <Image src="~/UI/tmp/login-header" stretch="none" horizontalAlignment="center" />
     <TextField id="email" text="{{ email }}" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
     <TextField id="pwTF" secure="true" text="{{ password }}" hint="Password" />
     <Button text="Sign in" tap="signIn" />

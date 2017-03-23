@@ -10,12 +10,29 @@ var userData = {
         scheme: "https"
         });
         return everlive.authentication.login(name, password, function(data) {
-        alert(data);
         return data;
         
     }, function(err) {
-            alert(err);
             return err;
+        });
+    },
+    tn_register:function(name,pwd){
+        var everlive = new Everlive({
+        appId: this.el_app_key,
+        scheme: "https"
+        });
+        var attrs = {
+            Email: name,
+            //DisplayName: name
+        };
+        everlive.Users.register(name,
+        pwd,
+        attrs,
+        function(data) {
+            alert(JSON.stringify("sussce"+data));
+        },
+        function(error) {
+            alert(JSON.stringify("======"+error));
         });
     },
 };
