@@ -4,6 +4,7 @@ var color = require("./Utils/tn-common-util.js"),
   utilityModule = require("utils/utils"),
   frameModule = require("ui/frame"),
   _ = require('lodash');
+var gestures = require("ui/gestures");
 
 var screen_width_inDP = require("platform").screen.mainScreen.widthPixels / require("platform").screen.mainScreen.scale;
 
@@ -69,6 +70,43 @@ exports.showsItemTap = function (args) {
   topmost.navigate(navigationEntry);
 };
 
+//profile 
+loginTap = function (args) {
+  topmost = frameModule.topmost();
+  var navigationEntry = {
+    moduleName: 'Views/login/login',
+    context: {
+      
+    },
+    animated: true,
+    transition: {
+      name: 'slideTop',
+      duration: 300,
+      curve: 'easeOut'
+    }
+  };
+  topmost.navigate(navigationEntry);
+};
+function refreshProfile(){
+  var infos = [
+    {"icon":"icon1","title":"User Login","sorrow":"so"},
+    {"icon":"icon1","title":"Settings","sorrow":"so"},
+    {"icon":"icon1","title":"Clear Cache Data","sorrow":"so"},
+    {"icon":"icon1","title":"About Us","sorrow":"so"},
+    ];
+    viewModel.set("infos",infos);
+
+    var header = page.getViewById("headerImg");
+    header.on(gestures.GestureTypes.tap, function (args) {
+      console.dump(args.gestures);
+      loginTap();
+
+      header.off(gestures.GestureTypes.tap, function (args) {
+      
+    });
+    });
+    
+}
 exports.pageLoaded = function (args) {
   page = args.object;
   var tabView = page.getViewById("tabView");

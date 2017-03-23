@@ -10,6 +10,7 @@
     }
   },
   "dependencies": {
+    "everlive-sdk": "^1.9.3",
     "lodash": "^4.17.4",
     "nativescript-grid-view": "^1.4.1",
     "nativescript-theme-core": "~1.0.2",
