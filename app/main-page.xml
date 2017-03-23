@@ -54,10 +54,6 @@
       </TabViewItem>
       <TabViewItem title="Profile" iconSource="~/UI/tab/Dep-U">
         <TabViewItem.view>
-<<<<<<< 89c3c26c14089387df03bc710a93e9cadd4b930c
-          <Label text="Profile" />
-=======
-
     <ScrollView orientation="vertical">
 
     <GridLayout class="gridlayout-profile" rows="200 auto auto auto">
@@ -86,7 +82,6 @@
        
     </GridLayout>
 </ScrollView>
->>>>>>> everlive install
         </TabViewItem.view>
       </TabViewItem>
     </TabView.items>

@@ -53,7 +53,7 @@ exports.gridViewItemTap = function (args) {
 
 exports.showsItemTap = function (args) {
   var selectedItem = _.get(viewModel.get('shows'), args.index),
-    topmost = frameModule.topmost();
+  topmost = frameModule.topmost();
 
   var navigationEntry = {
     moduleName: 'Views/show-detail/show-detail',
@@ -69,7 +69,6 @@ exports.showsItemTap = function (args) {
   };
   topmost.navigate(navigationEntry);
 };
-
 //profile 
 loginTap = function (args) {
   topmost = frameModule.topmost();
@@ -100,10 +99,8 @@ function refreshProfile(){
     header.on(gestures.GestureTypes.tap, function (args) {
       console.dump(args.gestures);
       loginTap();
-
       header.off(gestures.GestureTypes.tap, function (args) {
-      
-    });
+      });
     });
     
 }
@@ -113,6 +110,9 @@ exports.pageLoaded = function (args) {
   setTabView(tabView);
   viewModel.set("naviTitle", "Movies");
   viewModel.set("screenWidth", screen_width_inDP);
+
+  refreshProfile();
+
   page.bindingContext = viewModel;
   apiCall.getData('movies').then(function (response) {
     viewModel.set("movies", response.results);
