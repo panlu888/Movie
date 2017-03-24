@@ -6,7 +6,7 @@ var userData = {
     },
     tn_login:function(name,password){
         var everlive = new Everlive({
-        appId: this.el_app_key,
+        appId: 'esdcmmd4xv91ije0',
         scheme: "https"
         });
         return everlive.authentication.login(name, password, function(data) {
@@ -18,7 +18,7 @@ var userData = {
     },
     tn_register:function(name,pwd){
         var everlive = new Everlive({
-        appId: this.el_app_key,
+        appId: 'esdcmmd4xv91ije0',
         scheme: "https"
         });
         var attrs = {
