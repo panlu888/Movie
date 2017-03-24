@@ -21,4 +21,5 @@ refer to http://docs.nativescript.org/ui/theme.
 @import url('/css/tn-text.css');
 @import url('/css/tn-common.css');
 @import url('/Views/movie-detail/movie-detail.css');
-
+@import url('/Views/login/login.css');
+@import url('/Views/register/register.css');
