@@ -23,7 +23,11 @@ exports.signIn = function() {
     var username = email.text;
     var password = pwTF.text;
 
-    userData.tn_login(username,password);
+    userData.tn_login(username,password,function(data){
+         console.log("Successfully")
+    },function(err){
+        console.log("failed ")
+    });
     // .login(function(data){
     //     var accessToken = data.result.access_token;
     //     alert("Successfully logged the user in! Received access token: " + accessToken);
