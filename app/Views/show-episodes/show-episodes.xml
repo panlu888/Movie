@@ -1,0 +1,5 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+    <ActionBar id="actionbar" title="{{ naviTitle }}" icon="" class="action-bar" cssClass="navi-color">
+    </ActionBar>
+    <web-view id="webView"></web-view>
+</Page>

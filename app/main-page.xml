@@ -45,6 +45,7 @@
           <ListView items="{{ shows }}" id = "shows" cssClass="back-color" itemTap="showsItemTap" cssClass="list-mark">
             <ListView.itemTemplate>
             <StackLayout horizontal-aligment="stretch" rowHeight="60" >
+              <Image src="{{ artwork_304x171 }}" stretch="aspectFit" height="171" width="304" loadMode="async" cssClass="show-poster" />
               <Label text="{{ title }}" height="40" textWrap="true" class="title" cssClass="main-text"/>
               <Label text="{{ first_aired }}" height="20" textWrap="true" class="title" cssClass="detail-text"/>
             </StackLayout>

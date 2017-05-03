@@ -6,6 +6,7 @@
         <StackLayout orientation="vertical" row="0" col="1">
             <Label text="Descrpition"  cssClass="desc-label" />
             <TextView text="{{showContent.overview}}" cssClass="desc-text" />
+            <Button text="Full Episodes" tap="redirect"></Button>
         </StackLayout>
     </GridLayout>
 </Page>
